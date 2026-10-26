@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Division Calculator - BjSquare</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div class="calculator">
+        <img src="./Glossy Calculator Creator Logo.png" alt="Calculator Image">
+
+        <div class="calculator-actions">
+            <button type="button" id="clearCalculator" class="action-btn clear-btn">
+                <i class="bx bx-trash"></i>
+                <span>Clear</span>
+            </button>
+            <button type="button" id="addButton" class="action-btn add-btn">
+                <i class="bx bx-plus"></i>
+                <span>Add</span>
+            </button>
+            <button type="button" id="nextButton" class="action-btn next-btn">
+                <span>Next</span>
+                <i class="bx bx-right-arrow-alt"></i>
+            </button>
+        </div>
+
+        <div class="calculator-input">
+            <p>Currency Name</p>
+            <input type="text" id="calculatorExtraInput" autocomplete="off">
+        </div>
+
+        <input type="text" id="input1" placeholder="Enter AMOUNT" inputmode="numeric" autocomplete="off">
+        <input type="text" id="input2" placeholder="Enter RATE" inputmode="decimal" autocomplete="off">
+        <div class="result-box">
+            <p>Total Current</p>
+            <output id="answer" class="answer" aria-live="polite">0</output>
+        </div>
+
+        <input type="text" id="input3" placeholder="Enter CURRENCY" inputmode="numeric" autocomplete="off">
+        <input type="text" id="input4" placeholder="Enter RATE" inputmode="decimal" autocomplete="off">
+        <div class="result-box">
+            <p>Amount</p>
+            <output id="answer2" class="answer" aria-live="polite">0</output>
+        </div>
+        <div class="result-box">
+            <p id="gstToggle">GST</p>
+            <output id="gst" class="answer" aria-live="polite">0</output>
+        </div>
+        <div class="result-box">
+            <p>Total Amount</p>
+            <output id="final" class="answer" aria-live="polite">0</output>
+        </div>
+
+        <div class="gst-panel" id="gstPanel">
+            <button id="closeGst" type="button">Back</button>
+            <div class="gst-box">
+                <label>Amount 1</label>
+                <input type="text" id="gstamountinput1" value="0" readonly>
+            </div>
+            <div class="gst-box">
+                <label>GST 1 (%)</label>
+                <input type="text" id="gstprecentageinput1" value="0" readonly>
+            </div>
+            <div class="gst-box">
+                <label>Total 1</label>
+                <input type="text" id="gsttotalinput1" value="0" readonly>
+            </div>
+            <hr>
+            <div class="gst-box">
+                <label>Amount 2</label>
+                <input type="text" id="gstamountinput2" value="0" readonly>
+            </div>
+            <div class="gst-box">
+                <label>GST 2 (%)</label>
+                <input type="text" id="gstprecentageinput2" value="0" readonly>
+            </div>
+            <div class="gst-box">
+                <label>Total 2</label>
+                <input type="text" id="gsttotalinput2" value="0" readonly>
+            </div>
+            <hr>
+            <div class="gst-box">
+                <label for="fixCharge">Fix Charge</label>
+                <input type="text" id="fixCharge" value="200" min="0" step="any" inputmode="numeric">
+            </div>
+        </div>
+
+
+
+        <!-- Bill Panel -->
+        <div class="bill-panel" id="billPanel">
+            <div class="bill-header">
+                <div class="bill-actions">
+                    <button type="button" id="closeBill" class="close-bill"><i class="bx bx-left-arrow-alt"></i>
+                        Prev</button>
+                    <button type="button" id="downloadBillPDF"><i class="bx bxs-file-pdf"></i>Download PDF</button>
+                </div>
+                <img src="./Logo.png" alt="">
+            </div>
+
+
+            <div class="customer-details">
+                <input type="text" id="customerName" placeholder="Customer Name" aria-label="Customer Name">
+                <input type="tel" id="customerNumber" placeholder="Customer Number" aria-label="Customer Number" inputmode="numeric" maxlength="10">
+            </div>
+
+
+            <div id="billContent" class="bill-content">
+                <p class="bill-empty">No currency added yet.</p>
+            </div>
+
+            <div class="bill-grand-total">
+                <span>Grand Total</span>
+                <strong id="billGrandTotal">0.00</strong>
+            </div>
+
+            <p class="creator">Created By <span> Bhavesh Jain </span></p>
+
+        </div>
+
+    </div>
+
+</body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="./script.js"></script>
+
+</html>
